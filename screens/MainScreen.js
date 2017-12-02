@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Platform } from 'react-native';
+import { View, Platform, Text } from 'react-native';
 import { STATUS_BAR_HEIGHT } from './../constants';
 
 class MainScreen extends Component {
@@ -13,7 +13,7 @@ class MainScreen extends Component {
             marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
             color: 'white'
         },
-        headerLeft: <View>I</View>
+        headerLeft: <View><Text>I</Text></View>
     });
     render() {
         return (
