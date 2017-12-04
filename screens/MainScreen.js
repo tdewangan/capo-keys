@@ -4,6 +4,8 @@ import Expo from 'expo';
 import icon from './../assets/icons/app-icon.png';
 import { STATUS_BAR_HEIGHT } from './../constants';
 
+import { KeysButtons } from './../components/KeysButtons';
+
 const cacheImages = (images) => images.map(image => {
     if (typeof image === 'string') return Image.prefetch(image);
     return Expo.Asset.fromModule(image).downloadAsync();
@@ -42,7 +44,7 @@ class MainScreen extends Component {
         return (
             <View style={{ flex: 1, backgroundColor: '#ddd' }}>
                 {/* Modal */}
-
+                <KeysButtons />
                 {/* Content */}
             </View>
         );
