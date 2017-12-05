@@ -1,4 +1,4 @@
-import React, { Compoment } from 'react';
+import React, { Component } from 'react';
 import { View, Dimensions } from 'react-native';
 import { Text, ButtonGroup } from 'react-native-elements';
 import { connect } from 'react-redux';
@@ -6,7 +6,7 @@ import { selectKeyIndex } from './../actions';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
-class KeysButtons extends Compoment {
+class KeysButtons extends Component {
     render() {
         const { selectedValues: { selectedKeyIndex }, keys } = this.props;
         const keyButtons = keys.map(key => (key.shortKey ? '/' : [key.key]));
