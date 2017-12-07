@@ -8,6 +8,7 @@ import { STATUS_BAR_HEIGHT, SCREEN_WIDTH } from './../constants';
 import KeysButtons from './../components/KeysButtons';
 import CapoButtons from './../components/CapoButtons';
 import CapoKey from './../components/CapoKey';
+import ViewChordsButton from './../components/ViewChordsButton';
 
 const cacheImages = (images) => images.map(image => {
     if (typeof image === 'string') return Image.prefetch(image);
@@ -54,6 +55,7 @@ class MainScreen extends Component {
                     <Divider style={styles.dividerStyle} />
                     <CapoKey />
                 </View>
+                <ViewChordsButton style={styles.buttonContainerStyle} />
                 {/* Content */}
             </View>
         );
@@ -75,6 +77,11 @@ const styles = {
     dividerStyle: {
         backgroundColor: '#2196F3',
         width: SCREEN_WIDTH * 0.9
+    },
+    buttonContainerStyle: {
+        width: SCREEN_WIDTH,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 };
 export default MainScreen;

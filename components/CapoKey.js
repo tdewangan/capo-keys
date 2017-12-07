@@ -5,13 +5,14 @@ import { Text } from 'react-native-elements';
 
 class CapoKey extends Component {
     render() {
+        const { selectedValues: { capoKeyIndex }, keys } = this.props;
         return (
-            <View>
+            <View style={{ alignItems: 'center' }}>
                 <Text h3>CapoKey</Text>
-                <Text h1>(Key)</Text>
+                <Text h3>{keys[capoKeyIndex].key}</Text>
             </View>
         );
     }
 }
-
-export default connect()(CapoKey);
+const mapStateToProps = ({ keys, selectedValues }) => ({ keys, selectedValues });
+export default connect(mapStateToProps)(CapoKey);
