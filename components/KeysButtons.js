@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { View, Dimensions } from 'react-native';
+import { View } from 'react-native';
 import { Text, ButtonGroup } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { selectKeyIndex } from './../actions';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
+import { BUTTON_GROUP_STYLE as styles } from './../constants';
+import { selectKeyIndex } from './../actions';
 
 class KeysButtons extends Component {
     render() {
@@ -27,18 +27,5 @@ class KeysButtons extends Component {
     }
 }
 
-const styles = {
-    containerStyle: {
-        height: 40,
-        width: SCREEN_WIDTH * 0.9
-    },
-    buttonStyle: {
-        backgroundColor: 'white'
-    },
-    selectedTextStyle: {
-        color: 'orange',
-        fontWeight: '900'
-    }
-};
 const mapStateToProps = ({ keys, selectedValues }) => ({ keys, selectedValues });
 export default connect(mapStateToProps, { selectKeyIndex })(KeysButtons);
